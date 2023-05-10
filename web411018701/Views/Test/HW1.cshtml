@@ -4,7 +4,7 @@
 }
 
 <h2>HW1</h2>
-<form>
+<form action="/HW1/index" method="post">
     姓名: <input type="text" name="name" value="" /><br />
     帳號: <input type="text" name="name" value="" /><br />
     密碼: <input type="password" name="name" value="" /><br />
@@ -14,6 +14,22 @@
     <input type="checkbox" name="aa[]" value="閱讀" />閱讀
     <input type="checkbox" name="aa[]" value="看電影" />看電影 <br />
     自我介紹: <textarea></textarea>
-
+    <input type="submit" value="送出" />
 </form>
+
+@using (Html.BeginForm("Action", "Controller", FormMethod.Post))
+{
+    <div>
+        姓名: @Html.TextBox("uname") <br />
+        帳號: <input type="text" name="username" value="" /><br />
+        密碼: <input type="password" name="pwd" value="" /> <br />
+        性別: <input type="radio" name="gender" value="男性" /> 男生
+        <input type="radio" name="gender" value="女性" /> 女生 <br />
+        興趣: <input type="checkbox" name="aa[]" value="游泳" /> 游泳
+        <input type="checkbox" name="aa[]" value="閱讀" /> 閱讀
+        <input type="checkbox" name="aa[]" value="看電影" /> 看電影 <br />
+        自我介紹: <textarea></textarea>
+        <input type="submit" value="送出" />
+    </div>
+}
 
